@@ -19,10 +19,12 @@ stage (build)
 {
     steps {
         script{
+         echo " building image"
          sh "sudo ansible-playbook /home/elnb/nour/ansible/docker.yaml -i /home/elnb/nour/ansible/host.yaml"
          
         }
     script{
+         echo "pushing image to dockerhub"
          sh "sudo ansible-playbook /home/elnb/nour/ansible/docker_reg.yaml -i /home/elnb/nour/ansible/host.yaml"
          
         }    
